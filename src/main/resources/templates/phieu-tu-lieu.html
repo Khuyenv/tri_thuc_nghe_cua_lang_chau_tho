@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mẫu Phiếu Tư Liệu Điền Dã - Phụ Lục 03</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f4f4f5;
+            color: #1f2937;
+        }
+        .paper-sheet {
+            background: #fff;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Merriweather', serif;
+        }
+        .header-print {
+            text-align: center;
+            border-bottom: 2px solid #991b1b;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            margin-bottom: 25px;
+        }
+        .form-section-title {
+            font-weight: 700;
+            color: #991b1b;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 5px;
+        }
+        .dotted-line {
+            border-bottom: 1px dotted #94a3b8;
+            min-height: 24px;
+            display: inline-block;
+            width: 100%;
+        }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none !important; }
+            .paper-sheet { box-shadow: none; border: none; margin: 0; padding: 20px; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Action Toolbar (No Print) -->
+    <div class="bg-white border-bottom py-3 no-print sticky-top shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="/" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left me-1"></i> Quay lại Trang Chủ
+            </a>
+            <div class="d-flex gap-2">
+                <a href="/tro-ly-ai" class="btn btn-warning btn-sm fw-bold">
+                    <i class="bi bi-robot me-1"></i> Trợ lý AI Studio (PL04)
+                </a>
+                <button onclick="window.print()" class="btn btn-danger btn-sm fw-bold">
+                    <i class="bi bi-printer-fill me-1"></i> In / Xuất PDF Phiếu Nộp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper Sheet Document (Phụ lục 03) -->
+    <div class="paper-sheet">
+        <div class="header-print">
+            <h5 class="fw-bold mb-1">KẾ HOẠCH THỰC TẬP: DI SẢN PHI VẬT THỂ VÙNG MIỀN</h5>
+            <h6 class="text-secondary mb-3">VÙNG VĂN HÓA: CHÂU THỔ BẮC BỘ</h6>
+            <h3 class="fw-bold text-danger mb-1">PHIẾU TƯ LIỆU THU THẬP THỰC ĐỊA</h3>
+            <p class="text-muted small mb-0">(Ban hành kèm theo Phụ lục 03 - Hướng dẫn thực tập tuần 3)</p>
+        </div>
+
+        <!-- Phần 1: Thông tin người thu thập -->
+        <div class="form-section">
+            <div class="form-section-title">I. THÔNG TIN NGƯỜI THU THẬP TƯ LIỆU (SINH VIÊN)</div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <strong>Họ và tên:</strong> <span class="fw-bold text-primary" th:text="${hoTen}">Nguyễn Văn Khuyến</span>
+                </div>
+                <div class="col-md-3">
+                    <strong>Mã SV:</strong> <span class="fw-bold" th:text="${maSV}">PH59134</span>
+                </div>
+                <div class="col-md-3">
+                    <strong>Lớp:</strong> <span class="fw-bold" th:text="${lop}">C05</span>
+                </div>
+                <div class="col-md-6">
+                    <strong>Đề tài nghiên cứu:</strong> <span th:text="${deTai}">Tri thức nghề của làng nghề châu thổ</span>
+                </div>
+                <div class="col-md-6">
+                    <strong>Thời gian khảo sát / phỏng vấn:</strong> <span class="dotted-line" style="width: 50%;">Ngày .... tháng .... năm 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần 2: Thông tin chủ thể nắm giữ tri thức -->
+        <div class="form-section">
+            <div class="form-section-title">II. THÔNG TIN NGHỆ NHÂN / CHỦ THỂ NẮM GIỮ TRI THỨC</div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <strong>Họ và tên nghệ nhân/người dân:</strong> <span class="dotted-line" style="width: 45%;"></span>
+                </div>
+                <div class="col-md-3">
+                    <strong>Năm sinh:</strong> <span class="dotted-line" style="width: 60%;"></span>
+                </div>
+                <div class="col-md-3">
+                    <strong>Dân tộc:</strong> <span class="dotted-line" style="width: 65%;">Kinh</span>
+                </div>
+                <div class="col-md-12">
+                    <strong>Địa danh hành chính (sau sắp xếp):</strong> Thôn/Xã: ........................................, Huyện/Quận: ........................................, Tỉnh/TP: ........................................
+                </div>
+                <div class="col-md-6">
+                    <strong>Thâm niên trong nghề:</strong> ........... năm (Đời thứ: ......... trong dòng họ)
+                </div>
+                <div class="col-md-6">
+                    <strong>Danh hiệu (nếu có):</strong> Nghệ nhân Nhân dân / Nghệ nhân Ưu tú / Thợ giỏi
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần 3: Nội dung tri thức nghề thu thập -->
+        <div class="form-section">
+            <div class="form-section-title">III. NỘI DUNG TƯ LIỆU TRI THỨC NGHỀ DÂN GIAN</div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold">1. Tên gọi chính xác của làng nghề & Di sản:</p>
+                <div class="p-2 bg-light rounded small">
+                    Ví dụ: <em>Nghề gốm Bát Tràng (Xã Bát Tràng, Huyện Gia Lâm, Hà Nội) / Nghề dệt lụa Vạn Phúc (Hà Đông, Hà Nội)</em>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold">2. Nguồn gốc lịch sử, thần phả / truyền thuyết về ông tổ nghề:</p>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold">3. Kinh nghiệm tuyển chọn & xử lý nguyên liệu ban đầu:</p>
+                <div class="small text-muted mb-1">(Đặc tính của nguồn đất sét/tơ tằm/kim loại đồng/mây tre, thời điểm khai thác, phương pháp ủ/lọc/xử lý tự nhiên)</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold text-danger">4. Bí quyết kỹ thuật & thao tác thủ công (Trọng tâm tri thức nghề):</p>
+                <div class="small text-muted mb-1">(Các công đoạn mang tính bí truyền gia tộc; kỹ thuật canh lửa, pha chế men/thuốc nhuộm, kỹ năng phối hợp tay - mắt)</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold">5. Quy trình tuần tự các bước sản xuất sản phẩm hoàn chỉnh:</p>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold text-success">6. Phương thức kiểm tra và đánh giá sản phẩm đạt chuẩn chất lượng:</p>
+                <div class="small text-muted mb-1">(Kinh nghiệm dân gian thẩm định bằng thính giác, thị giác, xúc giác không cần máy móc)</div>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+
+            <div class="mb-3">
+                <p class="mb-1 fw-bold">7. Thực trạng bảo tồn và truyền nghề cho thế hệ trẻ hiện nay:</p>
+                <div class="dotted-line"></div>
+                <div class="dotted-line"></div>
+            </div>
+        </div>
+
+        <!-- Phần 4: Cam kết đạo đức thu thập di sản -->
+        <div class="form-section border p-3 rounded bg-light">
+            <div class="form-section-title text-dark">IV. CAM KẾT NGUYÊN TẮC LÀM VIỆC VỚI CỘNG ĐỒNG</div>
+            <ul class="small text-muted mb-0 ps-3">
+                <li>Tôi cam đoan thông tin ghi nhận xuất phát từ tinh thần tôn trọng nghệ nhân là chủ thể sáng tạo.</li>
+                <li>Không tiết lộ các nội dung bí quyết gia truyền mà nghệ nhân hoặc dòng họ yêu cầu giữ kín.</li>
+                <li>Phản ánh đúng thực trạng sản xuất thủ công thực tế, không đồng nhất với các hiện tượng thương mại hóa du lịch đơn thuần.</li>
+            </ul>
+        </div>
+
+        <!-- Chữ ký xác nhận -->
+        <div class="row text-center mt-5">
+            <div class="col-6">
+                <p class="fw-bold mb-1">XÁC NHẬN CỦA NGHỆ NHÂN / ĐỊA PHƯƠNG</p>
+                <small class="text-muted">(Ký và ghi rõ họ tên)</small>
+                <div style="height: 80px;"></div>
+                <p class="dotted-line" style="width: 70%;"></p>
+            </div>
+            <div class="col-6">
+                <p class="fw-bold mb-1">NGƯỜI THU THẬP TƯ LIỆU (SINH VIÊN)</p>
+                <small class="text-muted">(Ký và ghi rõ họ tên)</small>
+                <div style="height: 80px;"></div>
+                <p class="fw-bold text-primary mb-0" th:text="${hoTen}">Nguyễn Văn Khuyến</p>
+                <small class="text-muted" th:text="'Mã SV: ' + ${maSV}"></small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

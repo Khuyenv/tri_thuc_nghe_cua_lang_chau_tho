@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tri-nghe-lang-chau-tho
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: online

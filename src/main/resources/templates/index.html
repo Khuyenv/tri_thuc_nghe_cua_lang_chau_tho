@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri Thức Nghề Làng Châu Thổ Bắc Bộ - Nguyễn Văn Khuyến PH59134</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fbf9f5;
+            color: #333;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Merriweather', serif;
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #7c2d12, #991b1b, #451a03);
+            color: #fff;
+            padding: 40px 0 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .badge-student {
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .nav-custom {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .card-craft {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+        .card-craft:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(124, 45, 18, 0.15);
+        }
+        .card-craft img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .btn-craft {
+            background-color: #991b1b;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .btn-craft:hover {
+            background-color: #7f1d1d;
+            color: #fff;
+        }
+        .tag-group {
+            font-size: 0.8rem;
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 15px;
+        }
+        footer {
+            background-color: #262626;
+            color: #d4d4d4;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner Định Danh Sinh Viên -->
+    <header class="header-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-warning text-dark mb-2 fw-bold">
+                        <i class="bi bi-geo-alt-fill me-1"></i> VÙNG VĂN HÓA: <span th:text="${vungVanHoa}">Châu thổ Bắc Bộ</span>
+                    </span>
+                    <h1 class="fw-bold display-6 mb-2">HỆ THỐNG TRA CỨU TRI THỨC NGHỀ DÂN GIAN</h1>
+                    <p class="lead mb-3" style="font-size: 1.15rem; opacity: 0.95;">
+                        Đề tài: <strong>Tri thức nghề của làng nghề châu thổ</strong> - Di sản văn hóa phi vật thể vùng miền
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge-student"><i class="bi bi-person-circle me-1"></i> Sinh viên: <strong th:text="${hoTen}">Nguyễn Văn Khuyến</strong></span>
+                        <span class="badge-student"><i class="bi bi-card-heading me-1"></i> Mã SV: <strong th:text="${maSV}">PH59134</strong></span>
+                        <span class="badge-student"><i class="bi bi-mortarboard-fill me-1"></i> Lớp: <strong th:text="${lop}">C05</strong></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="/tro-ly-ai" class="btn btn-warning btn-lg fw-bold shadow-sm">
+                        <i class="bi bi-stars me-1"></i> Trợ lý AI Studio
+                    </a>
+                    <a href="/phieu-tu-lieu" class="btn btn-outline-light btn-lg ms-2">
+                        <i class="bi bi-file-earmark-text me-1"></i> Phiếu tư liệu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg nav-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-font text-danger fw-bold" href="/">
+                <i class="bi bi-palette-fill me-1"></i> Tri Thức Nghề Làng Châu Thổ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="/"><i class="bi bi-house-door me-1"></i> Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/phieu-tu-lieu"><i class="bi bi-journal-check me-1"></i> Mẫu Phiếu Tư Liệu (Phụ lục 03)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tro-ly-ai"><i class="bi bi-robot me-1"></i> Trợ lý AI Studio (Phụ lục 04)</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/" method="get">
+                    <input class="form-control me-2" type="search" name="keyword" th:value="${keyword}" placeholder="Tìm theo tên làng, bí quyết, nghề..." aria-label="Search">
+                    <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold text-dark mb-1">Di sản Tri thức nghề Thủ công truyền thống</h2>
+                <p class="text-muted">
+                    Tổng hợp các làng nghề tiêu biểu vùng đồng bằng sông Hồng với các bí quyết gia truyền và kinh nghiệm thao tác thủ công.
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end align-self-center">
+                <span class="text-muted fw-bold">Tổng số hồ sơ: <span class="badge bg-secondary" th:text="${tongSo}">5</span></span>
+            </div>
+        </div>
+
+        <!-- Thông báo tìm kiếm nếu có -->
+        <div th:if="${keyword != null and keyword != ''}" class="alert alert-info d-flex justify-content-between align-items-center">
+            <span>Kết quả tìm kiếm cho từ khóa: <strong th:text="${keyword}"></strong></span>
+            <a href="/" class="btn btn-sm btn-outline-dark">Xóa bộ lọc</a>
+        </div>
+
+        <!-- Danh sách làng nghề Grid -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" th:each="item : ${danhSach}">
+                <div class="card card-craft h-100">
+                    <img th:src="${item.hinhAnh}" class="card-img-top" th:alt="${item.tenLangNghe}">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="tag-group" th:text="${item.nhomNghe}">Gốm sứ</span>
+                            <small class="text-muted"><i class="bi bi-geo-alt"></i> Bắc Bộ</small>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-1" th:text="${item.tenLangNghe}">Làng gốm Bát Tràng</h5>
+                        <p class="card-text text-danger small fw-semibold mb-2" th:text="${item.diaChiHanhChinh}">Gia Lâm, Hà Nội</p>
+                        <p class="card-text text-secondary small flex-grow-1" th:text="${item.tomTat}">
+                            Mô tả tóm tắt tri thức nghề...
+                        </p>
+                        <hr class="my-2">
+                        <div class="d-flex justify-content-between align-items-center pt-2">
+                            <a th:href="@{'/tri-thuc/' + ${item.id}}" class="btn btn-sm btn-craft">
+                                <i class="bi bi-book-half me-1"></i> Xem chi tiết
+                            </a>
+                            <a th:href="@{'/tro-ly-ai?ask=' + ${item.tenLangNghe}}" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-chat-dots me-1"></i> Hỏi AI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Giới thiệu nguyên tắc làm việc với cộng đồng -->
+        <div class="card mt-5 border-0 shadow-sm" style="background-color: #fff7ed; border-left: 5px solid #c2410c !important;">
+            <div class="card-body p-4">
+                <h4 class="fw-bold text-warning-emphasis mb-3">
+                    <i class="bi bi-shield-check me-2"></i> Nguyên tắc thu thập tư liệu từ cộng đồng làng nghề
+                </h4>
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <div class="fw-bold text-dark"><i class="bi bi-heart-fill text-danger me-1"></i> Tôn trọng chủ thể</div>
+                        <small class="text-muted">Coi nghệ nhân là chủ thể nắm giữ tri thức, không coi họ là đối tượng bị khai thác hay ép buộc cung cấp.</small>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="fw-bold text-dark"><i class="bi bi-lock-fill text-primary me-1"></i> Giữ kín bí quyết gia truyền</div>
+                        <small class="text-muted">Tôn trọng tuyệt đối những bí quyết gia truyền hoặc nội dung nghệ nhân yêu cầu không công bố công khai.</small>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <div class="fw-bold text-dark"><i class="bi bi-eye-fill text-success me-1"></i> Phân biệt tính thực thể</div>
+                        <small class="text-muted">Nhận diện rõ sản phẩm thủ công truyền thống đang sống thực tế với các sản phẩm thương mại hóa du lịch.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1 fw-bold text-white">ĐỒ ÁN THỰC TẬP: DI SẢN PHI VẬT THỂ VÙNG MIỀN</p>
+            <p class="small text-white-50 mb-1">
+                Sinh viên thực hiện: <span class="text-white" th:text="${hoTen}">Nguyễn Văn Khuyến</span> | 
+                Mã SV: <span class="text-white" th:text="${maSV}">PH59134</span> | 
+                Lớp: <span class="text-white" th:text="${lop}">C05</span>
+            </p>
+            <p class="small text-white-50 mb-0">Hệ thống triển khai Cloud Render - Nền tảng Spring Boot 3 & H2 In-Memory</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
